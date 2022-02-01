@@ -1,8 +1,8 @@
 const Form = () => {
     return (
         <div className="md:w-1/2 lg:w-2/5">
-            <h1 className="font-black text-3xl text-center">Traker</h1>
-            <p className="text-lg mt-5 text-center mb-10">Add and Manage Patients</p>
+            <h2 className="font-black text-3xl text-center">Traker</h2>
+            <p className="text-lg mt-5 text-center mb-10">Add and Manage {''} <span className="text-indigo-600 font-bold text-xl">Patients</span></p>
             <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
                 <div className="mb-5">
                     <label htmlFor="name" className="block text-gray-700 uppercase font-bold">First Name</label>
