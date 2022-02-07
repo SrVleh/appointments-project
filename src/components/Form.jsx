@@ -11,6 +11,13 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        //Form validation
+        if([ fName, lName, email, birthday, symptoms ].includes('')){
+            console.log("There's at least one empty camp!")
+        }else {
+            console.log("All the camps are filled!")
+        }
         
         console.log("Sending form...")
     }
