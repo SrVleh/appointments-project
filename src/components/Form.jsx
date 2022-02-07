@@ -8,6 +8,8 @@ const Form = () => {
     const [birthday, setBirth] = useState('')
     const [symptoms, setSympt] = useState('')
 
+    const [error, setError] = useState(false)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,9 +17,11 @@ const Form = () => {
         //Form validation
         if([ fName, lName, email, birthday, symptoms ].includes('')){
             console.log("There's at least one empty camp!")
-        }else {
-            console.log("All the camps are filled!")
+            setError(true)
+            return
         }
+
+        setError(false)
         
         console.log("Sending form...")
     }
@@ -31,6 +35,11 @@ const Form = () => {
                 onSubmit={handleSubmit}
                 className="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
                 >
+                {error && 
+                <div className='bg-red-700 text-white text-center p-3 uppercase font-bold mb-3 rounded'>
+                    <p>There's an error</p>
+                </div>
+                }
                 <div className="mb-5">
                     <label htmlFor="name" className="block text-gray-700 uppercase font-bold">First Name</label>
                     <input 
