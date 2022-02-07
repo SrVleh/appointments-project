@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Form = () => {
+const Form = ({ patients, setPatients }) => {
 
     const [fName, setFname] = useState('')
     const [lName, setLname] = useState('')
@@ -22,8 +22,27 @@ const Form = () => {
         }
 
         setError(false)
+
+        //Patient Obj
+        const patientObj = {
+            fName,
+            lName,
+            email,
+            birthday,
+            symptoms
+        }
+
+        setPatients([...patients, patientObj])
+
+        //Reset Form
         
-        console.log("Sending form...")
+        setFname('')
+        setLname('')
+        setEmail('')
+        setBirth('')
+        setSympt('')
+
+        
     }
 
 
