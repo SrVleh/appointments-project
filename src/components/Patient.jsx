@@ -4,7 +4,6 @@ const Patient = ({ patient }) => {
 
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
-        <p>{ id }</p>
         <p className="font-bold mb-3 text-gray-700 uppercase">First Name: {''}
             <span className="font-normal normal-case">{ fName }</span>
         </p>
