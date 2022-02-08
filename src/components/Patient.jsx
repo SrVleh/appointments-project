@@ -1,6 +1,12 @@
-const Patient = ({ patient }) => {
+import { useEffect } from "react";
+
+const Patient = ({ patient, setPatient }) => {
 
     const { fName, lName, email, birthday, symptoms, id } = patient
+
+    useEffect( () => {
+        console.log("Component is ready")
+    }, [])
 
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
@@ -21,7 +27,11 @@ const Patient = ({ patient }) => {
         </p>
 
         <div className="flex justify-between mt-10">
-            <button type="button" className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-md">
+            <button 
+                type="button" 
+                className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-md"
+                onClick = { () => setPatient(patient) }
+            >
                 Edit
             </button>
             <button type="button" className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-md">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Error from './Error'
 
-const Form = ({ patients, setPatients }) => {
+const Form = ({ patients, setPatients, patient }) => {
 
     const [fName, setFname] = useState('')
     const [lName, setLname] = useState('')
@@ -10,6 +10,11 @@ const Form = ({ patients, setPatients }) => {
     const [symptoms, setSympt] = useState('')
 
     const [error, setError] = useState(false)
+
+
+    useEffect( () => {
+        console.log(patient)
+    }, [])
 
     const genId = () => {
         const random = Math.random().toString(36).substring(2)
