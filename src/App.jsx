@@ -10,6 +10,15 @@ function App() {
   const[patient, setPatient] = useState({})
 
   useEffect(() => {
+    const getFromStorage = () => {
+      const patientsLS = JSON.parse(localStorage.getItem('patients')) ?? []
+      setPatients(patientsLS)
+    }
+
+    getFromStorage()
+  },[])
+
+  useEffect(() => {
     localStorage.setItem('patients', JSON.stringify( patients ))
   },[patients])
 
