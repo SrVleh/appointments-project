@@ -13,8 +13,15 @@ const Form = ({ patients, setPatients, patient }) => {
 
 
     useEffect( () => {
-        console.log(patient)
-    }, [])
+        if( Object.keys(patient).length > 0 ) {
+            setFname(patient.fName)
+            setLname(patient.lName)
+            setEmail(patient.email)
+            setBirth(patient.birthday)
+            setSympt(patient.symptoms)
+
+        }
+    }, [patient])
 
     const genId = () => {
         const random = Math.random().toString(36).substring(2)

@@ -4,10 +4,6 @@ const Patient = ({ patient, setPatient }) => {
 
     const { fName, lName, email, birthday, symptoms, id } = patient
 
-    useEffect( () => {
-        console.log("Component is ready")
-    }, [])
-
   return (
     <div className="m-3 bg-white shadow-md px-5 py-10 rounded-xl">
         <p className="font-bold mb-3 text-gray-700 uppercase">First Name: {''}
