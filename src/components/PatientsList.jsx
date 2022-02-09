@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Patient from "./Patient"
 
-const PatientsList = ({ patients, setPatient }) => {
+const PatientsList = ({ patients, setPatient, deletePatient }) => {
 
     useEffect( () => {
         if(patients.length > 0) {
@@ -26,6 +26,7 @@ const PatientsList = ({ patients, setPatient }) => {
                             key = { patient.id }
                             patient = { patient }
                             setPatient = { setPatient }
+                            deletePatient = { deletePatient }
                         />
                     )}
                 </>
